@@ -58,3 +58,32 @@ roslaunch duckietown camera.launch veh:=duckiebot[id] raw:=true rect:=true
 * rect： 是否启动校正节点
 * 摄像头msg可以通过rqt\_image\_view指令查看，下拉菜单中的名称即为对应图片的topic名
 
+##### ROS网络环境配置
+* 分别在小车和电脑端修改.bashrc文件
+* 在.bashrc文件末尾添加：
+```bash
+# 小车端
+ROS_HOSTNAME=[小车ip]
+ROS_MASTER_URI=http://[电脑ip]:11311
+```
+```bash
+# 电脑端
+ROS_HOSTNAME=[电脑ip]
+ROS_MASTER_URI=http://[电脑ip]:11311
+```
+
+* 网络配置验证
+```bash
+# 电脑端
+# in a new terminal 
+rosrun turtlesim turtlesim_node
+```
+```bash
+# 小车端
+# in a new terminal
+rosrun turtlesim draw_square
+```
+若小乌龟在界面中沿方形路径移动，说明网络配置成功
+
+
+

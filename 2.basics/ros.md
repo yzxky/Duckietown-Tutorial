@@ -55,8 +55,13 @@ catkin_create_pkg [package_name] roscpp rospy std_msgs
 
 * 之后就可以在package内组织代码等
 
-
 ##### 编写及运行ROS程序
 编写简单的publisher和subscriber  
 参见ros tutorial教程([C++](wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber(c%2B%2B), [Python](wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber(python))
 
+##### 理解ROS的一个demo
+```bash
+roscore
+[in a new terminal] rosrun turtlesim turtlesim_node
+[in a new terminal] rosrun turtlesim draw_square
+```
